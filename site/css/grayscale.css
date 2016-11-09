@@ -313,6 +313,13 @@ fieldset[disabled] .btn-pet4u.active {
     height: 400px;
     margin-top: 250px;
   }
+
+  .fotos{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+
+  }
 }
 .btn {
   text-transform: uppercase;
