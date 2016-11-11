@@ -8,11 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
-    <link rel="stylesheet" type="text/css" href="css/slideshow.css" />
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="js/slideshow.js"></script>
     <title>Pet4u</title>
 
     <!-- Bootstrap Core CSS -->
@@ -74,25 +71,31 @@
 
     <!-- Intro Header -->
     <header class="intro">
+        <!-- script -->
+        <script>
+            // Array of images which you want to show: Use path you want.
+            var images=new Array('img/simba.jpg','img/simba2.jpeg','img/simba3.jpg');
+            // Index of the next image to show 
+            var nextimage=0;
+            // Calls function
+            doSlideshow();
+
+            function doSlideshow(){
+                if(nextimage>=images.length){nextimage=0;}
+                $('.intro')
+                .hide()
+                .css('background','url("'+images[nextimage++]+'") no-repeat bottom center scroll')
+                .fadeIn(1500,function(){
+                    setTimeout(doSlideshow,5000);
+                });
+                
+            }
+        </script>
+        <!-- script -->
         <div class="intro-body">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <!-- slideshow -->
-                        <div class="row">
-                            <div id="slideshow">
-                                <div class="slide">
-                                    <img src="https://pixabay.com/static/uploads/photo/2014/07/27/20/29/landscape-403165_960_720.jpg" alt="" style="width:100%"/>
-                                </div>
-                                <div class="slide">
-                                    <img src="http://static.boredpanda.com/blog/wp-content/uploads/2014/02/amazing-iceland-landscapes-8.jpg" alt="" style="width:100%"/>
-                                </div>
-                                <div class="slide">
-                                    <img src="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/12/2016/09/iStock-landscape.jpg" alt="" style="width:100%"/>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- slideshow -->
                         <div class="row">
                             <div><img id="logo" src="img/logo.png"></img></div>
                         </div>
